@@ -2,7 +2,14 @@
   (:require [clj-http.client :as client])
   (:gen-class))
 
-(def url "https://fantasy.espn.com/apis/v3/games/ffl/seasons/2019/segments/0/leagues/803723?view=mMatchup&view=mMatchupScore")
+(def year "2019")
+(def league-id "803723")
+
+(def url (str "https://fantasy.espn.com/apis/v3/games/ffl/seasons/"
+              year
+              "/segments/0/leagues/"
+              league-id
+              "?view=mMatchup&view=mMatchupScore"))
 
 (defn make-request
   []
